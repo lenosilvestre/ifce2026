@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="recover-container">
+            <h2>Redefinir Senha</h2>
+            <form id="reset-form">
+                <label for="new-password">Nova senha:</label>
+                <input type="password" id="new-password" name="new-password" required>
+                <label for="new-password2">Repetir nova senha:</label>
+                <input type="password" id="new-password2" name="new-password2" required>
+                <button type="submit">Salvar nova senha</button>
+            </form>
+            <div id="reset-message" style="margin-top: 16px;"></div>
+            <a href="login.html">Voltar ao login</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import { supabase } from './js/script.js';
+
+        const form = document.getElementById('reset-form');
+        const message = document.getElementById('reset-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const newPassword = document.getElementById('new-password').value;
+            const newPassword2 = document.getElementById('new-password2').value;
+
+            if (newPassword !== newPassword2) {
+                message.textContent = 'As senhas não coincidem. Por favor, digite novamente.';
+                message.style.color = 'red';
+                return;
+            }
+
+            const { error } = await supabase.auth.updateUser({ password: newPassword });
+            if (error) {
+                message.textContent = 'Erro: ' + error.message;
+                message.style.color = 'red';
+            } else {
+                message.textContent = 'Senha redefinida com sucesso! Você já pode fazer login.';
+                message.style.color = 'green';
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biologia - IFCE 2025</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+    <link rel="icon" type="image/png" href="img/studying.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script type="module">
+        import { initProgress } from './js/progress.js';
+        import { saveProgressSupabase, loadProgressSupabase } from './js/script.js';
+        document.addEventListener("DOMContentLoaded", initProgress);
+    </script>
+</head>
+
+<body>
+    <div id="progressbar">
+        <div id="progress">
+            <div id="progress-text">0%</div>
+        </div>
+    </div>
+
+    <header style="margin-bottom: 24px;">
+        <h1 style="margin-top: 40px;">Biologia</h1>
+        <div class="btinicio">
+            <a href="index.html">
+                <img src="img/casa.png" alt="Início" width="30" height="30">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="container" style="max-width: 700px;">
+            <h2>Conteúdo Programático de Biologia</h2>
+            <form>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" id="bio_1_1" onclick="updateProgressBar(this.id)"> 1. Evolução Biológica: Teorias evolutivas (Lamarckismo, Darwinismo, Neodarwinismo e Teoria Sintética). Especiação por anagênese e cladogênese.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="bio_1_2" onclick="updateProgressBar(this.id)"> 2. Citologia: Membrana plasmática e Estruturas Citoplasmáticas (morfofisiologia).</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="bio_1_3" onclick="updateProgressBar(this.id)"> 3. Citogenética: Núcleo celular. Divisão celular (mitose e meiose).</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="bio_1_4" onclick="updateProgressBar(this.id)"> 4. Genética molecular: A estrutura do DNA. Replicação do DNA. Transcrição e Processamento do RNA. Tradução. O código genético (a importância da universalidade e redundância).</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="bio_1_5" onclick="updateProgressBar(this.id)"> 5. Genética Básica: Leis de Mendel. Variações do Mendelismo (Ausência de dominância, Genes Letais, Polialelia e Interação gênica).</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="bio_1_6" onclick="updateProgressBar(this.id)"> 6. Biotecnologias e suas aplicações: Transgenia, Clonagem, PCR e Eletroforese.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="bio_1_7" onclick="updateProgressBar(this.id)"> 7. Botânica: Fisiologia das Angiospermas (Nutrição vegetal e Hormônios vegetais).</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="bio_1_8" onclick="updateProgressBar(this.id)"> 8. Zoologia: Filo Chordata (filogenia e fisiologia comparada).</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="bio_1_9" onclick="updateProgressBar(this.id)"> 9. Ecologia: Fluxo de matéria e energia nos Ecossistemas. Ciclos biogeoquímicos e seus impactos ambientais.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="bio_1_10" onclick="updateProgressBar(this.id)"> 10. Endemias brasileiras de maior prevalência no Nordeste: Dengue. Amebíase. Giardíase. Leishmanioses. Doença de Chagas. Esquistossomose. Teníase e Cisticercose. Ascaridíase.</label>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <img src="img/studying.png" alt="Estudando">
+            <p class="footer-title">
+                Página de Estudos IFCE 2025
+            </p>
+            <p class="footer-desc">
+                Recursos gratuitos para ajudar na sua preparação para o Concurso Público de Professor do IFCE.
+                Aproveite os materiais, organize seus estudos e boa sorte na sua jornada!
+            </p>
+            <p class="footer-dev">
+                Desenvolvido por Leno Silvestre &mdash; <span style="font-style: italic;">Projeto independente, sem vínculo oficial com o IFCE</span>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+
+
+
+
+

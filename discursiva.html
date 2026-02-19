@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discursiva - IFCE 2025</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+    <link rel="icon" type="image/png" href="img/studying.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script type="module">
+        import { initProgress } from './js/progress.js';
+        import { saveProgressSupabase, loadProgressSupabase } from './js/script.js';
+        document.addEventListener("DOMContentLoaded", initProgress);
+    </script>
+</head>
+
+<body>
+    <div id="progressbar">
+        <div id="progress">
+            <div id="progress-text">0%</div>
+        </div>
+    </div>
+
+    <header style="margin-bottom: 24px;">
+        <h1 style="margin-top: 40px;">Discursiva</h1>
+        <div class="btinicio">
+            <a href="index.html">
+                <img src="img/casa.png" alt="Início" width="30" height="30">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="container" style="max-width: 700px;">
+            <h2>Educação Profissional e Tecnológica</h2>
+            <form>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" id="educ_1" onclick="updateProgressBar(this.id)"> <a
+                                href="./pdfs/Bases conceituais da educação profissional e tecnológica - PROFEPT _PAULO CÉSAR.pdf"
+                                target="_blank" rel="noopener noreferrer">
+                                1. Educação profissional e tecnológica no Brasil: organização e bases conceituais</a></label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="educ_2" onclick="updateProgressBar(this.id)"> <a
+                                href="./pdfs/PPP_-_01_de_agosto_2013_DB.pdf" target="_blank" rel="noopener noreferrer">
+                                2. Projeto Político-Pedagógico do IFRN</a></label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="educ_3" onclick="updateProgressBar(this.id)"> 3. Identidade e
+                            concepções institucionais</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="educ_4" onclick="updateProgressBar(this.id)"> 4. Princípios e
+                            diretrizes orientadores da prática pedagógica</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="educ_5" onclick="updateProgressBar(this.id)"> 5. Concepções,
+                            princípios e fundamentos do currículo integrado na educação profissional e tecnológica</label>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <img src="img/studying.png" alt="Estudando">
+            <p class="footer-title">
+                Página de Estudos IFCE 2025
+            </p>
+            <p class="footer-desc">
+                Recursos gratuitos para ajudar na sua preparação para o Concurso Público de Professor do IFCE.
+                Aproveite os materiais, organize seus estudos e boa sorte na sua jornada!
+            </p>
+            <p class="footer-dev">
+                Desenvolvido por Leno Silvestre &mdash; <span style="font-style: italic;">Projeto independente, sem vínculo
+                    oficial com o IFCE</span>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+
+
+
+
+

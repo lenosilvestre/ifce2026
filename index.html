@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteúdo IFCE 2026</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+    <link rel="icon" type="image/png" href="img/studying.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+
+
+    <script type="module">
+        import { getUserId } from './js/auth.js';
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            await getUserId();
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Concurso Público para Professor de Ensino Básico, Técnico e Tecnológico - IFCE 2026</h1>
+
+
+    <div class="edital" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+        <img src="img/icons8-chapeu-de-formatura-50.png" alt="icons8 chapéu de formatura 30" width="30" height="50">
+        <a href="https://www.institutoaocp.org.br/concursos/685" target="_blank">
+            <h2 style="color: #0300be;"> Edital oficial e anexos (Editais IFCE) </h2>
+        </a>
+    </div>
+
+    <div class="cards-list">
+         <div class="card-item">
+            <img src="img/biblioteca.png" alt="lei">
+            <h2><a href="portugues_geral.html">Língua Portuguesa </a></h2>
+        </div> 
+        <div class="card-item">
+            <img src="img/lei.png" alt="lei">
+            <h2><a href="legislacao.html">Legislação</a></h2>
+        </div>
+        <div class="card-item">
+            <img src="img/escreva.png" alt="lei">
+            <h2><a href="pedagogico.html">Conhecimentos específicos da área de docência </a></h2>
+        </div>
+        <!-- <div class="card-item">
+            <img src="img/biblioteca.png" alt="livros">
+            <h2><a href="letras.html">Letras Específicos</a></h2>
+        </div> -->
+        <!-- <div class="card-item">
+            <img src="img/lei.png" alt="lei">
+            <h2><a href="biologia.html">Biologia</a></h2>
+        </div> -->
+        <div class="card-item">
+            <img src="img/informatica.png" alt="computador">
+            <h2><a href="informatica.html"> Metodologia e Técnicas da Computação</a></h2>
+        </div>
+        <div class="card-item">
+            <img src="img/informacoes.png" alt="">
+            <h2><a href="README.md">Sobre a página</a></h2>
+        </div>
+        <div class="card-item">
+            <button id="logout-btn" style="margin-left: 10px;">Sair</button>
+        </div>
+    </div>
+
+    <table class="table">
+        <tbody>
+
+            <tr class="title">
+
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">Componentes das Provas</p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">N° de Questões</p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">Peso</p>
+                </td>
+
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">Nº mínimo de Pontos </p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">Nº de Pontos total</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">Língua Portuguesa</p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">10</p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">1</p>
+                </td>
+
+                <td rowspan="4" colspan="1">
+                    <p class="dou-paragraph"> 60% </p>
+                </td>
+                <td rowspan="4" colspan="1">
+                    <p class="dou-paragraph">100,0 </p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">Legislação </p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">10</p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">1,5</p>
+                </td>
+
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">Conhecimentos específicos da área de docência </p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">10</p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">1,5</p>
+                </td>
+
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">Conhecimentos Específicos</p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">30</p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">2</p>
+                </td>
+
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="6">
+                    <p class="dou-paragraph">Caráter: (E/C) Eliminatório/Classificatório</p>
+            </tr>
+            </td>
+
+
+        </tbody>
+    </table>
+
+    <div>
+        <p class="p-title">CRONOGRAMA PARA O CONCURSO PÚBLICO IFCE</p>
+    </div>
+    <table class="table">
+        <tbody>
+
+            <tr>
+
+                <td rowspan="1" colspan="2" class="title">
+                    <p class="dou-paragraph">ATIVIDADE/FASE</p>
+                </td>
+                <td rowspan="1" colspan="1" class="title">
+                    <p class="dou-paragraph">DATA </p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="2">
+                    <p class="dou-paragraph">Inscrições</p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph"> 09h do dia 25/02 até às 23h59 do dia
+19/03/2026
+
+
+                    </p>
+                </td>
+
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="2">
+                    <p class="dou-paragraph">Isenção da taxa de pagamento</p>
+                </td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph">09h do dia 25/02 até às 16h do dia
+27/02/2026</p>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="2">
+                    <p class="dou-paragraph"> Resultados dos Pedidos de Isenção </p>
+                </td>
+                <td rowspan="1" colspan="1">17/03/2026
+</td>
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="2">
+                    <p class="dou-paragraph">Último dia para efetuar o Pagamento do Boleto Bancário</p>
+                </td>
+                <td rowspan="1" colspan="1">até o dia 20/03/2026 observado o
+horário de compensação bancária
+</td>
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="2">
+                    <p class="dou-paragraph">Aplicação da Prova Objetiva </p>
+                </td>
+                <td rowspan="1" colspan="1">26/04/2026</td>
+            </tr>
+            <tr>
+                <td rowspan="1" colspan="2">Duração da prova:</td>
+                <td rowspan="1" colspan="1">
+                    <p class="dou-paragraph"> 4 horas</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer class="footer">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <img src="img/studying.png" alt="Estudando">
+            <p class="footer-title">
+                Página de Estudos IFCE 2026
+            </p>
+            <p class="footer-desc">
+                Recursos gratuitos para ajudar na sua preparação para o Concurso Público de Professor do IFCE.
+                Aproveite os materiais, organize seus estudos e boa sorte na sua jornada!
+            </p>
+            <p class="footer-dev">
+                Desenvolvido por Leno Silvestre &mdash; <span style="font-style: italic;">Projeto independente, sem
+                    vínculo oficial com o IFCE</span>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

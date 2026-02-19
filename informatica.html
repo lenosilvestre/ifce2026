@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informática - IFCE 2025</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+    <link rel="icon" type="image/png" href="img/studying.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script type="module">
+        import { initProgress } from './js/progress.js';
+        import { saveProgressSupabase, loadProgressSupabase } from './js/script.js';
+        document.addEventListener("DOMContentLoaded", initProgress);
+    </script>
+</head>
+
+<body>
+    <div id="progressbar">
+        <div id="progress">
+            <div id="progress-text">0%</div>
+        </div>
+    </div>
+
+    <header style="margin-bottom: 24px;">
+        <h1 style="margin-top: 40px;">Informática</h1>
+        <div class="btinicio">
+            <a href="index.html">
+                <img src="img/casa.png" alt="Início" width="30" height="30">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="container" style="max-width: 700px;">
+            <h2>Metodologia e Técnicas da Computação</h2>
+            <form>
+                <ul>
+                    <li>
+                        <label><input type="checkbox" id="info_1" onclick="updateProgressBar(this.id)"> 1. Metodologia de desenvolvimento de algoritmos; tipos de dados básicos e estruturados; comandos de uma linguagem de programação; recursividade.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="info_2" onclick="updateProgressBar(this.id)"> 2. Listas ordenadas, listas encadeadas, pilhas e filas; árvores e suas generalizações; árvores binárias, árvores de busca e árvores balanceadas.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="info_3" onclick="updateProgressBar(this.id)"> 3. Conceito de processo; gerência de processos/processador; comunicação, concorrência e sincronização de processos. Gerenciamento de dispositivos de E/S.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="info_4" onclick="updateProgressBar(this.id)"> 4. Organização, estrutura e operação de arquivos; diretórios; conteúdo e estrutura; arquivos do sistema e sistemas de arquivos virtuais.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="info_5" onclick="updateProgressBar(this.id)"> 5. Sistemas de banco de dados: modelo de dados; modelagem e projeto; normalização de dados.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="info_6" onclick="updateProgressBar(this.id)"> 6. Sistemas de gerenciamento de bancos de dados: arquitetura, segurança, integridade, concorrência, recuperação após falha, gerenciamento de transações.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="info_7" onclick="updateProgressBar(this.id)"> 7. Manutenção, documentação, padrões de desenvolvimento, reuso, engenharia reversa, reengenharia e ambientes de desenvolvimento de software.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="info_8" onclick="updateProgressBar(this.id)"> 8. Verificação, validação e testes de software: casos de teste, tipos de teste, procedimento e cobertura de testes.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="info_9" onclick="updateProgressBar(this.id)"> 9. Paradigmas de linguagens de programação; semântica formal; teoria dos tipos; sistemas de tipos; polimorfismo; verificação e inferência de tipos.</label>
+                    </li>
+                    <li>
+                        <label><input type="checkbox" id="info_10" onclick="updateProgressBar(this.id)"> 10. Álgebra e cálculo relacional; linguagens de consulta; otimização de consultas; bancos de dados distribuídos; mineração de dados.</label>
+                    </li>
+                </ul>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <img src="img/studying.png" alt="Estudando">
+            <p class="footer-title">
+                Página de Estudos IFCE 2025
+            </p>
+            <p class="footer-desc">
+                Recursos gratuitos para ajudar na sua preparação para o Concurso Público de Professor do IFCE.
+                Aproveite os materiais, organize seus estudos e boa sorte na sua jornada!
+            </p>
+            <p class="footer-dev">
+                Desenvolvido por Leno Silvestre &mdash; <span style="font-style: italic;">Projeto independente, sem
+                    vínculo oficial com o IFCE</span>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
