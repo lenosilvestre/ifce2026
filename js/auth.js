@@ -1,33 +1,31 @@
-require('dotenv').config();
+// Função de login: envia email e senha para o servidor e armazena token
+export async function login(email, password) {
+    console.log('Iniciando login para:', email);
+	try {
+		const res = await fetch('/auth/login', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ email, senha: password }),
+		});
 
-import { supabase } from './script.js';
+		const data = await res.json();
 
-// Função para obter o user_id do usuário autenticado
-export async function getUserId() {
-    const { data, error } = await supabase.auth.getUser();
-    if (data && data.user) {
-        return data.user.id;
-    } else {
-       // window.location.href = "login.html";        
-       return null; // Permite acesso sem login
-    }
+		if (!res.ok) {
+			const msg = data && data.message ? data.message : 'Erro ao efetuar login';
+			throw new Error(msg);
+		}
+
+		// Se o servidor retornar um token, salvamos no localStorage
+		if (data.token) {
+			localStorage.setItem('authToken', data.token);
+		}
+
+		return data;
+	} catch (err) {
+		throw err;
+	}
 }
 
-const logoutBtn = document.getElementById('logout-btn');
-
-if (logoutBtn) {
-    // Verifica se o usuário está logado para mostrar ou ocultar o botão
-    supabase.auth.getUser().then(({ data }) => {
-        if (!data.user) {
-           // logoutBtn.style.display = 'none'; // Oculta o botão se não logado
-           logoutBtn.disabled  = true; // Desabilita o botão se não logado
-        }
-    });
-
-    logoutBtn.addEventListener('click', async () => {
-        await supabase.auth.signOut();
-        window.location.href = "login.html";
-    });
+export function logout() {
+	localStorage.removeItem('authToken');
 }
-
-

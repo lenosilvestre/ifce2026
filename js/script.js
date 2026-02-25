@@ -1,8 +1,4 @@
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-const supabaseUrl = 'https://cihubwjrcljogtkqyove.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNpaHVid2pyY2xqb2d0a3F5b3ZlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAxMjI4MzAsImV4cCI6MjA2NTY5ODgzMH0.jTfkIfibjtcV6U_hZiwA5cthLssrrGpBRY61JkQmYPo';
-import { supabase } from './auth.js'; // Atualizar a importação
+import { login } from './auth.js';
 
 // Função para obter o identificador da página
 function getPageKey() {
@@ -70,13 +66,9 @@ if (loginForm) {
         e.preventDefault();
         const email = document.getElementById('login-email').value;
         const password = document.getElementById('login-password').value;
-        const { error } = await supabase.auth.signInWithPassword({
-            email,
-            password,
-        });
-        if (error) {
-            alert('Erro ao fazer login: ' + error.message);
-        } else {
+        console.log('Tentando login com:', email, password);
+        try {
+            await login(email, password);
             alert('Login bem-sucedido!');
             // Recupera o parâmetro redirect da URL, se existir
             const params = new URLSearchParams(window.location.search);
@@ -86,6 +78,8 @@ if (loginForm) {
             } else {
                 window.location.href = "index.html";
             }
+        } catch (error) {
+            alert('Erro ao fazer login: ' + error.message);
         }
     });
 }
@@ -106,6 +100,3 @@ if (signupForm) {
         }
     });
 }
-
-
-
