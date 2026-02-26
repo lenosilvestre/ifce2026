@@ -31,9 +31,10 @@ router.post("/login", async (req, res) => {
   const user = result[0];
   if (!user) return res.status(400).json({ error: "Usuário não encontrado" });
 
-  //const match = await bcrypt.compare(senha, user.senha);
-  const match = senha === user.senha;
-  if (!match) return res.status(401).json({ error: "Senha incorreta"  });
+  const match = await bcrypt.compare(senha, user.senha);
+  //const match = senha === user.senha;
+  if (!match) 
+    return res.status(401).json({ error: "Senha incorreta"  });
 
   // cria o token JWT
   const token = jwt.sign(
@@ -41,8 +42,14 @@ router.post("/login", async (req, res) => {
     process.env.JWT_SECRET,
     { expiresIn: "1h" }
   );
-
+  res.cookie("token", token, { httpOnly: true });
   res.json({ token });
+});
+
+router.post("/logout", (req, res) => {
+
+  res.clearCookie("token");
+  res.json({ message: "Logout bem-sucedido" });
 });
 
 module.exports = router;

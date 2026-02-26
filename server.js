@@ -10,6 +10,7 @@ app.use(express.static(path.join(__dirname)));
 
 const authRoutes = require("./routes/auth");
 const usuariosRoutes = require("./routes/usuarios");
+const progrssoRoutes = require("./routes/progresso");
 
 // rotas públicas
 app.use("/auth", authRoutes);
@@ -17,7 +18,7 @@ app.use("/auth", authRoutes);
 // rotas privadas
 app.use("/usuarios", usuariosRoutes);
 
-app.use("/auth", require("./routes/auth"));
+app.use("/progresso", progrssoRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor na porta ${PORT}`));
